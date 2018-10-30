@@ -1,3 +1,1 @@
-console.log( $() );
-
-console.log('OK');
+$('li').text('OK');
