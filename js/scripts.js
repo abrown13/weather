@@ -1,17 +1,37 @@
+// City One
 $.simpleWeather({
-    location: 99004,
+    location: 99031,
+    unit: 'f',
     success: function(weather) {
-        console.log(weather.image);
-        console.log(weather.city);
-        console.log(weather.temp);
-        console.log(weather.updated);
-        
-        $('.image img').attr('src', weather.image);
-        $('.city').text(weather.city);
-        $('.temp').text(weather.temp);
-        $('.time').text(weather.updated);
-    }, 
+      // Entire weather object
+      console.log(weather);
+      
+      // Display Data
+      $('i').addClass('icon-' + weather.code);
+      
+    },
     error: function(error) {
-      console.log('Go outside');
+      // Show if weather cannot be retreived
+      console.log('Look outside.');
     }
- });
+  
+  });
+
+// City Two
+$.simpleWeather({
+    location: 'Spokane, WA',
+    unit: 'f',
+    success: function(weather) {
+      // Entire weather object
+      console.log(weather);
+      
+      // Display Data
+      $('i').addClass('icon-' + weather.code);
+      
+    },
+    error: function(error) {
+      // Show if weather cannot be retreived
+      console.log('Look outside.');
+    }
+  
+  });
