@@ -8,6 +8,8 @@ $.simpleWeather({
       
       // Display Data
       $('i').addClass('icon-' + weather.code);
+      $('.spangle').text(weather.city);
+      $('.spangle-temp').text(weather.temp);
       
     },
     error: function(error) {
@@ -27,6 +29,8 @@ $.simpleWeather({
       
       // Display Data
       $('i').addClass('icon-' + weather.code);
+      $('.spokane').text(weather.city);
+      $('.spokane-temp').text(weather.temp);
       
     },
     error: function(error) {
@@ -35,3 +39,5 @@ $.simpleWeather({
     }
   
   });
+
+// Geolocation
