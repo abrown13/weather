@@ -6,6 +6,22 @@ body {
 .card {
     position: absolute;
   }
+
+.rainy {
+  background-image: url("../images/rainy.jpg")
+}
+
+.snowy {
+  background-image: url("../images/winter.jpg")
+}
+
+.sunny {
+  background-image: url("../images/summer.jpg")
+}
+
+.windy {
+  background-image: url("../images/fall.jpg")
+}
   
   /* First Frame */
   #city1, 

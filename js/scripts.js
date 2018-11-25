@@ -10,6 +10,21 @@ $.simpleWeather({
       $('i').addClass('icon-' + weather.code);
       $('.spangle').text(weather.city);
       $('.spangle-temp').text(weather.temp);
+
+      // Change Image
+      if ( weather.code >= 0 && weather.code <= 12 ) {
+        $('.card-image').addClass('rainy');
+    }
+
+      if ( weather.code >= 13 && weather.code <= 18 ) {
+      $('.card-image').addClass('snowy');
+
+      if ( weather.code >= 23 && weather.code <= 30 ) {
+        $('.card-image').addClass('windy');
+
+      if ( weather.code >= 31 && weather.code <= 34 ) {
+        $('.card-image').addClass('sunny');
+
       
     },
     error: function(error) {
