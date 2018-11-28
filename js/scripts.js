@@ -25,8 +25,8 @@ $.simpleWeather({
    // Display Data
    $('#geolocation .city').text(weather.city);
    $('#geolocation .temp').text(weather.temp);
-   $('#geolocation .temp').text(weather.high);
-   $('#geolocation .temp').text(weather.low);
+   $('#geolocation .high').text(weather.high);
+   $('#geolocation .low').text(weather.low);
 
  },
  error: function(error) {
@@ -49,6 +49,8 @@ $.simpleWeather({
       $('i').addClass('icon-' + weather.code);
       $('#city1 .city').text(weather.city);
       $('#city1 .temp').text(weather.temp);
+      $('#city1 .high').text(weather.high);
+      $('#city1 .low').text(weather.low);
 
     },
     error: function(error) {
@@ -70,6 +72,8 @@ $.simpleWeather({
       $('i').addClass('icon-' + weather.code);
       $('#city2 .city').text(weather.city);
       $('#city2 .temp').text(weather.temp);
+      $('#city2 .high').text(weather.high);
+      $('#city2 .low').text(weather.low);
       
     },
     error: function(error) {
