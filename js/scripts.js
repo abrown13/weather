@@ -25,6 +25,8 @@ $.simpleWeather({
    // Display Data
    $('#geolocation .city').text(weather.city);
    $('#geolocation .temp').text(weather.temp);
+   $('#geolocation .temp').text(weather.high);
+   $('#geolocation .temp').text(weather.low);
 
  },
  error: function(error) {
