@@ -8,12 +8,8 @@ $.simpleWeather({
       
       // Display Data
       $('i').addClass('icon-' + weather.code);
-      $('.spangle').text(weather.city);
-      $('.spangle-temp').text(weather.temp);
-      
-      if ( weather.code >= 23 && weather.code <= 30 ) {
-        $('.card-image').addClass('windy');
-    }
+      $('#city1 .city').text(weather.city);
+      $('#city1 .temp').text(weather.temp);
 
     },
     error: function(error) {
@@ -33,8 +29,8 @@ $.simpleWeather({
       
       // Display Data
       $('i').addClass('icon-' + weather.code);
-      $('.spokane').text(weather.city);
-      $('.spokane-temp').text(weather.temp);
+      $('#city2 .city').text(weather.city);
+      $('#city2 .temp').text(weather.temp);
       
     },
     error: function(error) {
@@ -45,23 +41,58 @@ $.simpleWeather({
   });
 
 // Geolocation
+// Geolocation Check
+if ( 'geolocation' in navigator ) {
+  
+  $('#geolocation').show();
+  
+} else {
+  
+  $('#geolocation *').hide();
+  $('#geolocation').html('<p>Not Available</p>');
+ 
+}
+
+// Get Weather
+$('button').click( function(){
+ 
+  navigator.geolocation.getCurrentPosition(function(position) {
+   
+   // Check lat/long coordinates
+   var lat = position.coords.latitude;
+   var long = position.coords.longitude;
+   
+   console.log(lat, long);
+   
+   // Get Weather
+   getWeather( lat + ',' + long );
+    
+  });
+});
 
 
+// Define Get Weather
+var getWeather = function( location ) {
 
+console.log(location);
 
-// Change Image
-    //   if ( weather.code >= 0 && weather.code <= 12 ) {
-    //     $('.card-image').addClass('rainy');
-    // }
+$.simpleWeather({
+ location: location,
+ unit: 'f',
+ success: function(weather) {
+   
+   // Entire weather object
+   // console.log(weather);
+   
+   // Display Data
+   $('#geolocation .city').text(weather.city);
+   $('#geolocation .temp').text(weather.temp);
 
-    //   if ( weather.code >= 13 && weather.code <= 18 ) {
-    //     $('.card-image').addClass('snowy');
-    // }
+ },
+ error: function(error) {
+   // Show if weather cannot be retreived
+   console.log('Look Outside.');
+ }
 
-    //   if ( weather.code >= 23 && weather.code <= 30 ) {
-    //     $('.card-image').addClass('windy');
-    // }
-
-    //   if ( weather.code >= 31 && weather.code <= 34 ) {
-    //     $('.card-image').addClass('sunny');
-    // }
+});
+};
