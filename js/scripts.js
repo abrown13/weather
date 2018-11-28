@@ -1,16 +1,4 @@
 // Geolocation
-// Geolocation Check
-if ( 'geolocation' in navigator ) {
-  
-  $('#geolocation').show();
-  
-} else {
-  
-  $('#geolocation *').hide();
-  $('#geolocation').html('<p>Not Available</p>');
- 
-}
-
 // Get Weather
 $('button').click( function(){
  
@@ -20,19 +8,11 @@ $('button').click( function(){
    var lat = position.coords.latitude;
    var long = position.coords.longitude;
    
-   console.log(lat, long);
-   
-   // Get Weather
-   getWeather( lat + ',' + long );
+   // Get weather
+   var location = lat + ',' + long ;
     
   });
 });
-
-
-// Define Get Weather
-var getWeather = function( location ) {
-
-console.log(location);
 
 $.simpleWeather({
  location: location,
@@ -40,7 +20,7 @@ $.simpleWeather({
  success: function(weather) {
    
    // Entire weather object
-   // console.log(weather);
+    console.log(weather);
    
    // Display Data
    $('#geolocation .city').text(weather.city);
@@ -53,7 +33,6 @@ $.simpleWeather({
  }
 
 });
-};
 
 
 // City One
