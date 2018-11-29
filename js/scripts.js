@@ -52,6 +52,10 @@ $.simpleWeather({
       $('#city1 .high').text(weather.high);
       $('#city1 .low').text(weather.low);
 
+      if ( weather.code >= 29 && weather.code <= 36 ) {
+        $('body').addClass('sun-shower');
+    }
+
     },
     error: function(error) {
       // Show if weather cannot be retreived
