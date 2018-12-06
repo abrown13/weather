@@ -110,3 +110,5 @@ $.simpleWeather({
     }
   
   });
+
+};
