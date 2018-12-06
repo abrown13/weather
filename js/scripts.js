@@ -1,4 +1,16 @@
 // Geolocation
+// Geolocation Check
+if ( 'geolocation' in navigator ) {
+  
+  $('#geolocation').show();
+  
+} else {
+  
+  $('#geolocation *').hide();
+  $('#geolocation').html('<p>Not Available</p>');
+ 
+}
+
 // Get Weather
 $('button').click( function(){
  
@@ -8,16 +20,25 @@ $('button').click( function(){
    var lat = position.coords.latitude;
    var long = position.coords.longitude;
    
-   // Get weather
-   var location = lat + ',' + long ;
+   console.log(lat, long);
+   
+   // Call Get Weather Function
+   getWeather( lat + ',' + long );
     
   });
 });
 
-$.simpleWeather({
- location: location,
- unit: 'f',
- success: function(weather) {
+
+// Define Get Weather Function
+var getWeather = function( location ) {
+
+  console.log(location);
+
+  $.simpleWeather({
+
+    location: location,
+    unit: 'f',
+    success: function(weather) {
    
    // Entire weather object
     console.log(weather);
