@@ -1,57 +1,35 @@
-// City One
+// Carousel
+var carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances
+
+// Primary
 $.simpleWeather({
-  location: 99031,
-  unit: 'f',
-  success: function(weather) {
-    // Entire weather object
-    console.log(weather);
-    
-    // Display Data
-    $('i').addClass('icon-' + weather.code);
-    $('#city1 .city').text(weather.city);
-    $('#city1 .temp').text(weather.temp);
-    $('#city1 .currently').text(weather.currently);
-    $('#city1 .high').text(weather.high);
-    $('#city1 .low').text(weather.low);
+    location: 98105,
+    success: function(weather) {
+       
+      $('#primary .image img').attr( 'src', weather.image  );
+      $('#primary .city').text(weather.city);
+      $('#primary .temp').text(weather.temp);
 
-    if ( weather.code >= 29 && weather.code <= 36 ) {
-      $('body').addClass('sun-shower');
-  }
+    }, 
+    error: function(error) {
+      console.log('Go outside!');
+    }
+ });
 
-  },
-  error: function(error) {
-    // Show if weather cannot be retreived
-    console.log('Look outside.');
-  }
-
-});
-
-// City Two
+//  Secondary
 $.simpleWeather({
-  location: 'Spokane, WA',
-  unit: 'f',
+  location: 'Honolulu, Hi',
   success: function(weather) {
-    // Entire weather object
-    console.log(weather);
-    
-    // Display Data
-    $('i').addClass('icon-' + weather.code);
-    $('#city2 .city').text(weather.city);
-    $('#city2 .temp').text(weather.temp);
-    $('#city2 .currently').text(weather.currently);
-    $('#city2 .high').text(weather.high);
-    $('#city2 .low').text(weather.low);
-    
-  },
+     
+    $('#secondary .image img').attr( 'src', weather.image  );
+    $('#secondary .city').text(weather.city);
+    $('#secondary .temp').text(weather.temp);
+
+  }, 
   error: function(error) {
-    // Show if weather cannot be retreived
-    console.log('Look outside.');
+    console.log('Go outside!');
   }
-
 });
-
-
-
 
 // Geolocation
 // Geolocation Check
@@ -67,52 +45,39 @@ if ( 'geolocation' in navigator ) {
 }
 
 // Get Weather
-$('button').click( function(){
+
  
   navigator.geolocation.getCurrentPosition(function(position) {
    
    // Check lat/long coordinates
    var lat = position.coords.latitude;
    var long = position.coords.longitude;
-   
-   console.log(lat, long);
-   
-   // Call Get Weather Function
-   getWeather( lat + ',' + long );
+   var location = lat + ',' + long;
     
-  });
-
-});
-
-
-// Define Get Weather Function
-var getWeather = function( location ) {
-
-  console.log(location);
+    // Define Get Weather Function
 
   $.simpleWeather({
 
     location: location,
     unit: 'f',
     success: function(weather) {
-   
-   // Entire weather object
-    console.log(weather);
-   
-   // Display Data
-   $('#geolocation .city').text(weather.city);
-   $('#geolocation .temp').text(weather.temp);
-   $('#geolocation .currently').text(weather.currently);
-   $('#geolocation .high').text(weather.high);
-   $('#geolocation .low').text(weather.low);
+      
+      // Entire weather object
+      // console.log(weather);
+      
+      // Display Data
+      $('#geolocation .image img').attr( 'src', weather.image  );
+      $('#geolocation .city').text(weather.city);
+      $('#geolocation .temp').text(weather.temp);
 
- },
- error: function(error) {
-   // Show if weather cannot be retreived
-   console.log('Look Outside.');
- }
+    },
+    error: function(error) {
+      // Show if weather cannot be retreived
+      console.log('Look Outside.');
+    }
+
+  });
 
 });
 
 
-};

@@ -1,1 +1,1 @@
-# weather
+# PWA Weather App
