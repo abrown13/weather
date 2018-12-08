@@ -7,3 +7,7 @@ ul li:first-child  {
 .carousel-item {
     background: lightgray;
 }
+
+ul {
+    list-style-type: none;
+}

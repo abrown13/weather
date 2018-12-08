@@ -3,12 +3,15 @@ var carousels = bulmaCarousel.attach(); // carousels now contains an array of al
 
 // Primary
 $.simpleWeather({
-    location: 98105,
+    location: 99031,
     success: function(weather) {
        
       $('#primary .image img').attr( 'src', weather.image  );
       $('#primary .city').text(weather.city);
       $('#primary .temp').text(weather.temp);
+      $('#primary .currently').text(weather.currently);
+      $('#primary .high').text(weather.high);
+      $('#primary .low').text(weather.low);
 
     }, 
     error: function(error) {
@@ -18,12 +21,15 @@ $.simpleWeather({
 
 //  Secondary
 $.simpleWeather({
-  location: 'Honolulu, Hi',
+  location: 'Spokane, WA',
   success: function(weather) {
      
     $('#secondary .image img').attr( 'src', weather.image  );
     $('#secondary .city').text(weather.city);
     $('#secondary .temp').text(weather.temp);
+    $('#secondary .currently').text(weather.currently);
+    $('#secondary .high').text(weather.high);
+    $('#secondary .low').text(weather.low);
 
   }, 
   error: function(error) {
@@ -69,6 +75,9 @@ if ( 'geolocation' in navigator ) {
       $('#geolocation .image img').attr( 'src', weather.image  );
       $('#geolocation .city').text(weather.city);
       $('#geolocation .temp').text(weather.temp);
+      $('#geolocation .currently').text(weather.currently);
+      $('#geolocation .high').text(weather.high);
+      $('#geolocation .low').text(weather.low);
 
     },
     error: function(error) {
