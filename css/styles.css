@@ -35,17 +35,17 @@ ul {
 }
 
 .hoodie {
-    background-image: url(/img/hoodie.svg);
+    background-image: url(/img/hoodie.png);
     background-size: cover;
 }
 
 .tshirt {
-    background-image: url(/img/tshirt.svg);
+    background-image: url(/img/tshirt.png);
     background-size: cover;
 }
 
 .raincoat {
-    background-image: url(/img/raincoat.svg);
+    background-image: url(/img/raincoat.png);
     background-size: cover;
 }
 
