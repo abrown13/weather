@@ -37,31 +37,31 @@ if ( 'geolocation' in navigator ) {
       
       // Display Data
 
-      // hoodie
-      if ( weather.code >= 19 && weather.code <= 30 ) {
-        $('#geolocation .image img').attr('src', '/img/hoodie.svg' );
-    }
-     
-    // raincoat
+      // raincoat
       if ( weather.code >= 0 && weather.code <= 18 ) {
-        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+        $('#geolocation .image img').addClass('raincoat' );
     }
 
       if ( weather.code >= 37 && weather.code <= 47 ) {
-        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+        $('#geolocation .image img').addClass('raincoat' );
     }
 
       if ( weather.code = 35 ) {
-        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+        $('#geolocation .image img').addClass('raincoat' );
     }
 
-    // tshirt
+      // hoodie
+      if ( weather.code >= 19 && weather.code <= 30 ) {
+        $('#geolocation .image img').addClass('hoodie' );
+    }
+
+       // tshirt
       if ( weather.code >= 31 && weather.code <= 34 ) {
-        $('#geolocation .image img').attr('src', '/img/tshirt.svg' );
+        $('#geolocation .image img').addClass('tshirt' );
     }
 
       if ( weather.code = 36 ) {
-        $('#geolocation .image img').attr('src', '/img/tshirt.svg' );
+        $('#geolocation .image img').addClass('tshirt' );
     }
 
       $('#geolocation .city').text(weather.city);
@@ -85,31 +85,31 @@ $.simpleWeather({
     location: 'Spokane, WA',
     success: function(weather) {
       
-      // hoodie
-      if ( weather.code >= 19 && weather.code <= 30 ) {
-        $('#primary .image img').attr('src', '/img/hoodie.svg' );
-    }
-     
-    // raincoat
+      // raincoat
       if ( weather.code >= 0 && weather.code <= 18 ) {
-        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+        $('#primary .image img').addClass('raincoat' );
     }
 
       if ( weather.code >= 37 && weather.code <= 47 ) {
-        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+        $('#primary .image img').addClass('raincoat' );
     }
 
       if ( weather.code = 35 ) {
-        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+        $('#primary .image img').addClass('raincoat' );
     }
 
-    // tshirt
+      // hoodie
+      if ( weather.code >= 19 && weather.code <= 30 ) {
+        $('#primary .image img').addClass('hoodie' );
+    }
+
+      // tshirt
       if ( weather.code >= 31 && weather.code <= 34 ) {
-        $('#primary .image img').attr('src', '/img/tshirt.svg' );
+        $('#primary .image img').addClass('tshirt' );
     }
 
       if ( weather.code = 36 ) {
-        $('#primary .image img').attr('src', '/img/tshirt.svg' );
+        $('#primary .image img').addClass('tshirt' );
     }
     
       $('#primary .city').text(weather.city);
@@ -128,32 +128,32 @@ $.simpleWeather({
 $.simpleWeather({
   location: 'Leavenworth, WA',
   success: function(weather) {
-     
-    // hoodie
-    if ( weather.code >= 19 && weather.code <= 30 ) {
-      $('#secondary .image img').attr('src', '/img/hoodie.svg' );
-  }
-   
-  // raincoat
+
+    // raincoat
     if ( weather.code >= 0 && weather.code <= 18 ) {
-      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+      $('#secondary .image img').addClass('raincoat' );
   }
 
     if ( weather.code >= 37 && weather.code <= 47 ) {
-      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+      $('#secondary .image img').addClass('raincoat' );
   }
 
     if ( weather.code = 35 ) {
-      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+      $('#secondary .image img').addClass('raincoat' );
   }
 
-  // tshirt
+    // hoodie
+    if ( weather.code >= 19 && weather.code <= 30 ) {
+      $('#secondary .image img').addClass('hoodie' );
+  }
+     
+    // tshirt
     if ( weather.code >= 31 && weather.code <= 34 ) {
-      $('#secondary .image img').attr('src', '/img/tshirt.svg' );
+      $('#secondary .image img').addClass('tshirt' );
   }
 
     if ( weather.code = 36 ) {
-      $('#secondary .image img').attr('src', '/img/tshirt.svg' );
+      $('#secondary .image img').addClass('tshirt' );
   }
 
     $('#secondary .city').text(weather.city);

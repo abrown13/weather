@@ -10,22 +10,21 @@ ul {
     color: #ffffff;
 }
 
-img {
-    width: 60%;
-    padding: 8%;
-}
-
 .high, .low {
-    display: inline-block
+    display: inline-block;
+    padding-top: 5%;
 }
 
 .temp {
     font-size: 11em;
-    padding-bottom: 5%;
 }
 
 .currently, .high, .low {
     font-size: 2em;
+}
+
+.currently {
+    padding-bottom: 5%;
 }
 
 .city {
@@ -33,4 +32,23 @@ img {
     top: 1px;
     left: 1px;
     font-size: 1em;
+}
+
+.hoodie {
+    background-image: url(/img/hoodie.svg);
+    background-size: cover;
+}
+
+.tshirt {
+    background-image: url(/img/tshirt.svg);
+    background-size: cover;
+}
+
+.raincoat {
+    background-image: url(/img/raincoat.svg);
+    background-size: cover;
+}
+
+img {
+    padding: 40%;
 }
