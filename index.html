@@ -42,8 +42,11 @@
 <link rel="stylesheet" href="css/bulma-carousel.min.css"> 
 <link rel="stylesheet" href="css/styles.css">
 
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 <!-- Title -->
-<title>Weather</title>
+<title>What to Wear Weather</title>
 
 
 
@@ -52,7 +55,7 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Title -->
-  <title>Weather</title>
+  <title>What to Wear Weather</title>
 
 </head>
 <body>
@@ -61,17 +64,33 @@
 
   <div class='carousel carousel-animated carousel-animate-slide'>
     <div class='carousel-container'>
+
+      <!-- Geolocation -->
+      <div id="geolocation" class='carousel-item'>
+        
+          <ul>
+            <li class="city">City</li>
+            <li class="temp">Temp</li>
+            <li class="currently">Currently</li>
+            <li class="image">
+                <img src="">
+            </li>
+            <li class="high">High</li>
+            <li class="low">Low</li>
+          </ul>
+           
+      </div>
       
       <!-- Primary -->
       <div  id="primary" class='carousel-item is-active'>
         
         <ul>
-            <li class="image">
-                <img src="">
-            </li>
             <li class="city">City</li>
             <li class="temp">Temp</li>
             <li class="currently">Currently</li>
+            <li class="image">
+                <img src="">
+            </li>
             <li class="high">High</li>
             <li class="low">Low</li>
           </ul>
@@ -82,34 +101,17 @@
       <div id="secondary" class='carousel-item'>
         
         <ul>
-            <li class="image">
-                <img src="">
-            </li>
             <li class="city">City</li>
             <li class="temp">Temp</li>
             <li class="currently">Currently</li>
+            <li class="image">
+                <img src="">
+            </li>
             <li class="high">High</li>
             <li class="low">Low</li>
           </ul>
       
       </div><!-- end .secondary -->
-     
-      <!-- Geolocation -->
-      <div id="geolocation" class='carousel-item'>
-        
-        <ul>
-          <li class="image">
-              <img src="">
-          </li>
-          <li class="city">City</li>
-          <li class="temp">Temp</li>
-          <li class="currently">Currently</li>
-          <li class="high">High</li>
-          <li class="low">Low</li>
-        </ul>
-      
-        
-      </div>
   
     </div><!-- end .carousel-container -->
   </div><!-- end .carousel -->

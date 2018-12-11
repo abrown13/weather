@@ -1,8 +1,36 @@
 /* Carousel */
-.carousel-item {
-    background: lightgray;
+html {
+    background: #624CAB;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
 
 ul {
     list-style-type: none;
+    color: #ffffff;
+}
+
+img {
+    width: 60%;
+    padding: 8%;
+}
+
+.high, .low {
+    display: inline-block
+}
+
+.temp {
+    font-size: 11em;
+    padding-bottom: 5%;
+}
+
+.currently, .high, .low {
+    font-size: 2em;
+}
+
+.city {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    font-size: 1em;
 }

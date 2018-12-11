@@ -1,42 +1,6 @@
 // Carousel
 var carousels = bulmaCarousel.attach(); // carousels now contains an array of all Carousel instances
 
-// Primary
-$.simpleWeather({
-    location: 99031,
-    success: function(weather) {
-       
-      $('#primary .image img').attr( 'src', weather.image  );
-      $('#primary .city').text(weather.city);
-      $('#primary .temp').text(weather.temp);
-      $('#primary .currently').text(weather.currently);
-      $('#primary .high').text(weather.high);
-      $('#primary .low').text(weather.low);
-
-    }, 
-    error: function(error) {
-      console.log('Go outside!');
-    }
- });
-
-//  Secondary
-$.simpleWeather({
-  location: 'Spokane, WA',
-  success: function(weather) {
-     
-    $('#secondary .image img').attr( 'src', weather.image  );
-    $('#secondary .city').text(weather.city);
-    $('#secondary .temp').text(weather.temp);
-    $('#secondary .currently').text(weather.currently);
-    $('#secondary .high').text(weather.high);
-    $('#secondary .low').text(weather.low);
-
-  }, 
-  error: function(error) {
-    console.log('Go outside!');
-  }
-});
-
 // Geolocation
 // Geolocation Check
 if ( 'geolocation' in navigator ) {
@@ -72,12 +36,39 @@ if ( 'geolocation' in navigator ) {
       // console.log(weather);
       
       // Display Data
-      $('#geolocation .image img').attr( 'src', weather.image  );
+
+      // hoodie
+      if ( weather.code >= 19 && weather.code <= 30 ) {
+        $('#geolocation .image img').attr('src', '/img/hoodie.svg' );
+    }
+     
+    // raincoat
+      if ( weather.code >= 0 && weather.code <= 18 ) {
+        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+    }
+
+      if ( weather.code >= 37 && weather.code <= 47 ) {
+        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+    }
+
+      if ( weather.code = 35 ) {
+        $('#geolocation .image img').attr('src', '/img/raincoat.svg' );
+    }
+
+    // tshirt
+      if ( weather.code >= 31 && weather.code <= 34 ) {
+        $('#geolocation .image img').attr('src', '/img/tshirt.svg' );
+    }
+
+      if ( weather.code = 36 ) {
+        $('#geolocation .image img').attr('src', '/img/tshirt.svg' );
+    }
+
       $('#geolocation .city').text(weather.city);
-      $('#geolocation .temp').text(weather.temp);
+      $('#geolocation .temp').text(weather.temp+'°');
       $('#geolocation .currently').text(weather.currently);
-      $('#geolocation .high').text(weather.high);
-      $('#geolocation .low').text(weather.low);
+      $('#geolocation .high').text('H:'+weather.high);
+      $('#geolocation .low').text('L:'+weather.low);
 
     },
     error: function(error) {
@@ -89,4 +80,90 @@ if ( 'geolocation' in navigator ) {
 
 });
 
+// Primary
+$.simpleWeather({
+    location: 'Spokane, WA',
+    success: function(weather) {
+      
+      // hoodie
+      if ( weather.code >= 19 && weather.code <= 30 ) {
+        $('#primary .image img').attr('src', '/img/hoodie.svg' );
+    }
+     
+    // raincoat
+      if ( weather.code >= 0 && weather.code <= 18 ) {
+        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+    }
 
+      if ( weather.code >= 37 && weather.code <= 47 ) {
+        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+    }
+
+      if ( weather.code = 35 ) {
+        $('#primary .image img').attr('src', '/img/raincoat.svg' );
+    }
+
+    // tshirt
+      if ( weather.code >= 31 && weather.code <= 34 ) {
+        $('#primary .image img').attr('src', '/img/tshirt.svg' );
+    }
+
+      if ( weather.code = 36 ) {
+        $('#primary .image img').attr('src', '/img/tshirt.svg' );
+    }
+    
+      $('#primary .city').text(weather.city);
+      $('#primary .temp').text(weather.temp+'°');
+      $('#primary .currently').text(weather.currently);
+      $('#primary .high').text('H:'+weather.high);
+      $('#primary .low').text('L:'+weather.low);
+
+    }, 
+    error: function(error) {
+      console.log('Go outside!');
+    }
+ });
+
+//  Secondary
+$.simpleWeather({
+  location: 'Leavenworth, WA',
+  success: function(weather) {
+     
+    // hoodie
+    if ( weather.code >= 19 && weather.code <= 30 ) {
+      $('#secondary .image img').attr('src', '/img/hoodie.svg' );
+  }
+   
+  // raincoat
+    if ( weather.code >= 0 && weather.code <= 18 ) {
+      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+  }
+
+    if ( weather.code >= 37 && weather.code <= 47 ) {
+      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+  }
+
+    if ( weather.code = 35 ) {
+      $('#secondary .image img').attr('src', '/img/raincoat.svg' );
+  }
+
+  // tshirt
+    if ( weather.code >= 31 && weather.code <= 34 ) {
+      $('#secondary .image img').attr('src', '/img/tshirt.svg' );
+  }
+
+    if ( weather.code = 36 ) {
+      $('#secondary .image img').attr('src', '/img/tshirt.svg' );
+  }
+
+    $('#secondary .city').text(weather.city);
+    $('#secondary .temp').text(weather.temp+'°');
+    $('#secondary .currently').text(weather.currently);
+    $('#secondary .high').text('H:'+weather.high);
+    $('#secondary .low').text('L:'+weather.low);
+
+  }, 
+  error: function(error) {
+    console.log('Go outside!');
+  }
+});
