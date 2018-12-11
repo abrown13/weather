@@ -1,9 +1,9 @@
 {
-    "name": "Progressive Web App for Weather",
-    "short_name": "PWA Web App",
+    "name": "What to Wear Weather",
+    "short_name": "WWW",
     "description": "Weather in your hand",
     "scope": ".",
-    "start_url": "/pwa-weather-app",
+    "start_url": "/weather-app",
     "display": "standalone",
     "orientation": "portrait", 
     "background_color": "#ffffff",
