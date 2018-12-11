@@ -30,7 +30,7 @@ ul {
 .city {
     position: absolute;
     top: 1px;
-    left: 1px;
+    left: -1px;
     font-size: 1em;
 }
 
